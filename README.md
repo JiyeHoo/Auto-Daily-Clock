@@ -6,7 +6,9 @@
 
 # 使用方式
 
-开启时根据提示，将 `APP` 开启 `无障碍`。
+`APK` 见 `release` ：[https://github.com/JiyeHoo/Auto-Daily-Clock/releases/tag/6.0.14](https://github.com/JiyeHoo/Auto-Daily-Clock/releases/tag/6.0.14)
+
+Android 7.0 以上使用。开启时根据提示，将 `APP` 开启 `无障碍`。
 
 更多细节见：[http://blog.jiyehoo.com:81/index.php/archives/288/](http://blog.jiyehoo.com:81/index.php/archives/288/)
 
