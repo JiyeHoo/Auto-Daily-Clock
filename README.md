@@ -1,17 +1,21 @@
-# Auto-Daily-Clock
+# AutoDailyClock-GUT
 
-桂林理工大学打卡，疫情打卡。使用 `Auto.js` 自动实现钉钉的智能填表，代码很简单。
+通过 `Auto.js` 自动实现桂林理工大学每日钉钉的脚本。
 
 
 
 # 使用方式
 
-`APK` 见 `release` ：[https://github.com/JiyeHoo/Auto-Daily-Clock/releases/tag/6.0.14](https://github.com/JiyeHoo/Auto-Daily-Clock/releases/tag/6.0.14)
+`APK` 安装包见 `release` ：[https://github.com/NtskwK/AutoDailyClock-GUT/releases](https://github.com/NtskwK/AutoDailyClock-GUT/releases)
 
-Android 7.0 以上使用。开启时根据提示，将 `APP` 开启 `无障碍`。之后无需任何操作，会自动提交表单。
+请在Android 7.0 以上的机型使用。开启时需根据提示，将 `APP` 开启 `无障碍` 权限。
 
-更多细节见：[http://blog.jiyehoo.com:81/index.php/archives/288/](http://blog.jiyehoo.com:81/index.php/archives/288/)
+# 更新说明
 
+由于目前的最新版本已经无法正常使用，而原作者[JiyeHoo](https://github.com/JiyeHoo)现已从大学毕业。[夏宇](https://github.com/NtskwK)决定接手这个项目的维护工作。（虽然还不知道能不能坚持下去就是了( ﾟдﾟ)つ）
+
+关于原版的更多细节请移步原作者的博客：
+[http://blog.jiyehoo.com:81/index.php/archives/288/](http://blog.jiyehoo.com:81/index.php/archives/288/)
 
 
 # 注意
