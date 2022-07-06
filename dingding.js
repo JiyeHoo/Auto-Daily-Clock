@@ -65,21 +65,25 @@ var StartClock = function(){
 
     toast("启用悬浮窗口以显示日志")
     console.show();
+    if(auto.service == null){
+        end("启动无障碍服务");
+    }
 
     log("启动钉钉");
     var appName = "钉钉";
     if(launchApp(appName) == false){
         end("启动钉钉");
     }
-    sleep(200);
+    sleep(2000);
     className("android.widget.ListView").findOne(5000);
-    sleep(1500);
+    sleep(3000);
         
 
     //直接盲点，点不到再说
     var mWidth = device.width / 2;
-    var mHeight = device.height - 20;
+    var mHeight = device.height - 150;
     click(mWidth, mHeight);
+    sleep(2000);
 
     // 确认所属组织
     // var member = id("dtv_arrow").findOne();
@@ -109,6 +113,8 @@ var StartClock = function(){
     } else {
         end("找到“今天”");
     }
+    sleep(2000);
+
     fillClock();   
 
     sleep(1000);
@@ -199,11 +205,11 @@ function fillClock(){
 
     // 找到获取定位
     //gesture(1000, [540, 1500], [540, 1011]);
-    var hq = text("获取").findOne(2000).parent();
+    var hq = className("android.view.View").text("获取").findOne();
     if (hq) {
         log("开始获取定位");
-        hq.click();
-        sleep(5000);
+        click(hq.bounds().centerX(), hq.bounds().centerY());
+        sleep(2000);
     } else {
         log("自动获取定位");
     }
@@ -211,10 +217,11 @@ function fillClock(){
     // 提交
     //lick(1035, 1680);
     //sleep(800);
-    var tj = className("android.view.View").text("提交").findOne(2000);
+   
+    var tj = className("android.view.View").text("提交").findOne(5000);
         if (tj) {
         log("开始提交");
-        tj.click();
+        click(tj.bounds().centerX(), tj.bounds().centerY());
     } else {
         end("自动提交");
     }
