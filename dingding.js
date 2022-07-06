@@ -108,7 +108,7 @@ var StartClock = function(){
         enterSwitch();
     }
     
-    var jt = className("android.view.View").text("今天").findOne(5000).parent();
+    var jt = className("android.view.View").text("今天").findOne(10000).parent();
     if (jt) {
         log("找到今天");
         jt.click();
@@ -238,7 +238,8 @@ function fillClock(){
 }
 
 function end(step){
-    log("无法" + step + "，请手动完成本次工作");
+    log("无法" + step);
+    log("请手动完成本次工作");
     toast("任务失败！详情请看日志内容");
     exit();
 }
