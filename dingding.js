@@ -9,14 +9,17 @@ ui.layout(
         <text margin="8" textSize="27sp" textStyle="bold" lines="3">
         欢迎使用AutoDailyClock
         </text>
-        <text margin="8">
-        使用本应用需要启用的权限：
-        </text>
-        <text margin="8"lines="3">
-        悬浮窗口、无障碍功能
+        <text margin="8" textStyle="bold" textColor="red">
+        本程序只适用于正常的健康日常打卡。如果身体发生异常状况请立即停止使用本程序，并及时向辅导员或其他负责人报告身体状况！
         </text>
         <button id="startButton"  text="开始打卡" style="Widget.AppCompat.Button.Colored" w="*"  h="70" margin="20"/>
         <button id="checkButton" text="检测权限" style="Widget.AppCompat.Button.Colored" w="*" h="70" margin="20"/>
+        <text margin="8">
+        使用本应用需要启用的权限：
+        </text>
+        <text margin="8">
+        悬浮窗口、无障碍功能
+        </text>
         <text margin="8" textColor="red">
         1.AutoDailyClock-GUT是一个开源项目，它是免费的。
         </text>
@@ -74,16 +77,15 @@ var StartClock = function(){
     if(launchApp(appName) == false){
         end("启动钉钉");
     }
-    sleep(2000);
     className("android.widget.ListView").findOne(5000);
-    sleep(3000);
+    sleep(1000);
         
 
     //直接盲点，点不到再说
     var mWidth = device.width / 2;
     var mHeight = device.height - 150;
     click(mWidth, mHeight);
-    sleep(2000);
+    sleep(500);
 
     // 确认所属组织
     // var member = id("dtv_arrow").findOne();
@@ -95,7 +97,7 @@ var StartClock = function(){
     // }
     // 一堆bug，你们自己手动换组织吧。哼(╯‵□′)╯︵┻━┻
 
-    var smartFill = className("android.view.View").text("高校每日健康打卡（学生健康码）2.0").findOne(5000);
+    var smartFill = className("android.view.View").text("高校每日健康打卡（学生健康码）2.0").findOne(8000);
     if (smartFill) {
         log("已找到打卡位置");
         smartFill.click();
@@ -195,12 +197,10 @@ function enterSwitch(){
 
 function fillClock(){
     // 如果有修改，重新提交
-    log("开始查找修改");
+    log("检测填写状态");
     var xg = className("android.view.View").text("修改").findOne(2000);
     if (xg) {
-        log("找到修改");
-        xg.click();
-        sleep(1000);
+        end("更改已经完成的打卡");
     }
 
     // 找到获取定位
@@ -217,14 +217,24 @@ function fillClock(){
     // 提交
     //lick(1035, 1680);
     //sleep(800);
-   
-    var tj = className("android.view.View").text("提交").findOne(5000);
-        if (tj) {
-        log("开始提交");
-        click(tj.bounds().centerX(), tj.bounds().centerY());
-    } else {
-        end("自动提交");
-    }
+    // var tj = className("android.widget.Button").findOne();
+    //     if (tj) {
+    //     log("开始提交");        
+    // } else {
+    //     end("自动提交");
+    // }
+    //没办法，点不了。只能手点 
+
+    gesture(500, [540, 1900], [540, 100]);
+    sleep(500);
+    gesture(500, [540, 1900], [540, 100]);
+    sleep(500);
+    gesture(500, [540, 1900], [540, 100]);
+
+    var mWidth = device.width / 2;
+    var mHeight = device.height - 150;
+    click(mWidth, mHeight);
+    sleep(500);
 }
 
 function end(step){
