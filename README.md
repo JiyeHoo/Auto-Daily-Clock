@@ -28,5 +28,7 @@
 
 # 致谢
 原脚本开发者：[JiyeHoo](https://github.com/JiyeHoo)
+
 Autojs项目：[https://github.com/hyb1996/Auto.js](https://github.com/hyb1996/Auto.js)
+
 AutoX项目：[https://github.com/kkevsekk1/AutoX](https://github.com/kkevsekk1/AutoX)
