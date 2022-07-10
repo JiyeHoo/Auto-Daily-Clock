@@ -1,5 +1,4 @@
 "ui";
-"auto";
 events.observeKey();
 events.onKeyDown("volume_down",function(event){
             threads.shutDownAll();
@@ -69,7 +68,10 @@ var StartClock = function(){
     toast("启用悬浮窗口以显示日志")
     console.show();
     if(auto.service == null){
-        end("启动无障碍服务");
+        auto.waitFor();
+        if(auto.service == null){
+            end("启动无障碍服务");
+        }
     }
 
     log("启动钉钉");
@@ -125,6 +127,7 @@ var StartClock = function(){
 }
 
 // 换一种写法以防搞错(￣_￣|||)
+
 // 尝试切换组织
 // function orgChange(){
 //     // 在工作台左上角找到切换按钮
